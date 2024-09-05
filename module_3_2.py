@@ -1,7 +1,7 @@
-def send_email(massage, recipient, *, sender = 'university.help@mail.com'):
-    if not recipient.__contains__('@') and not recipient.endswith('.com' or '.ru' or '.net'):
+def send_email(massage, recipient, sender = 'university.help@mail.com'):
+    if "@" not in recipient or "@" not in sender:
         print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
-    elif not sender.__contains__('@') and not sender.endswith('.com' or '.ru' or '.net'):
+    elif not recipient.endswith((".com", ".ru", ".net")) or not sender.endswith((".com", ".ru", ".net")):
         print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
     elif sender == recipient:
         print('Нельзя отправить письмо самому себе!')
